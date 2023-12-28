@@ -1,14 +1,7 @@
-// i18n-scanner.config.js
-// import { s2t, t2s } from './simpleBig.mjs';
-
-// const { s2t, t2s } = require('./simpleBig.mjs');
-// 使用动态导入
-// const { s2t, t2s } = await import('./simpleBig.js');
-
-const path = require('path');
 const fs = require('fs');
+const path = require('path');
 
-// 常量字符串码表
+// 简体中文到繁体中文的映射
 // 简体中文码表
 const sc =
   '皑蔼碍爱翱袄奥坝罢摆败颁办绊帮绑镑谤剥饱宝报鲍辈贝钡狈备惫绷笔毕毙闭边编贬变辩辫鳖瘪濒滨宾摈饼拨钵铂驳卜补参蚕残惭惨灿苍舱仓沧厕侧册测层诧搀掺蝉馋谗缠铲产阐颤场尝长偿肠厂畅钞车彻尘陈衬撑称惩诚骋痴迟驰耻齿炽冲虫宠畴踌筹绸丑橱厨锄雏础储触处传疮闯创锤纯绰辞词赐聪葱囱从丛凑窜错达带贷担单郸掸胆惮诞弹当挡党荡档捣岛祷导盗灯邓敌涤递缔点垫电淀钓调迭谍叠钉顶锭订东动栋冻斗犊独读赌镀锻断缎兑队对吨顿钝夺鹅额讹恶饿儿尔饵贰发罚阀珐矾钒烦范贩饭访纺飞废费纷坟奋愤粪丰枫锋风疯冯缝讽凤肤辐抚辅赋复负讣妇缚该钙盖干赶秆赣冈刚钢纲岗皋镐搁鸽阁铬个给龚宫巩贡钩沟构购够蛊顾剐关观馆惯贯广规硅归龟闺轨诡柜贵刽辊滚锅国过骇韩汉阂鹤贺横轰鸿红后壶护沪户哗华画划话怀坏欢环还缓换唤痪焕涣黄谎挥辉毁贿秽会烩汇讳诲绘荤浑伙获货祸击机积饥讥鸡绩缉极辑级挤几蓟剂济计记际继纪夹荚颊贾钾价驾歼监坚笺间艰缄茧检碱硷拣捡简俭减荐槛鉴践贱见键舰剑饯渐溅涧浆蒋桨奖讲酱胶浇骄娇搅铰矫侥脚饺缴绞轿较秸阶节茎惊经颈静镜径痉竞净纠厩旧驹举据锯惧剧鹃绢杰洁结诫届紧锦仅谨进晋烬尽劲荆觉决诀绝钧军骏开凯颗壳课垦恳抠库裤夸块侩宽矿旷况亏岿窥馈溃扩阔蜡腊莱来赖蓝栏拦篮阑兰澜谰揽览懒缆烂滥捞劳涝乐镭垒类泪篱离里鲤礼丽厉励砾历沥隶俩联莲连镰怜涟帘敛脸链恋炼练粮凉两辆谅疗辽镣猎临邻鳞凛赁龄铃凌灵岭领馏刘龙聋咙笼垄拢陇楼娄搂篓芦卢颅庐炉掳卤虏鲁赂禄录陆驴吕铝侣屡缕虑滤绿峦挛孪滦乱抡轮伦仑沦纶论萝罗逻锣箩骡骆络妈玛码蚂马骂吗买麦卖迈脉瞒馒蛮满谩猫锚铆贸么霉没镁门闷们锰梦谜弥觅绵缅庙灭悯闽鸣铭谬谋亩钠纳难挠脑恼闹馁腻撵捻酿鸟聂啮镊镍柠狞宁拧泞钮纽脓浓农疟诺欧鸥殴呕沤盘庞国爱赔喷鹏骗飘频贫苹凭评泼颇扑铺朴谱脐齐骑岂启气弃讫牵扦钎铅迁签谦钱钳潜浅谴堑枪呛墙蔷强抢锹桥乔侨翘窍窃钦亲轻氢倾顷请庆琼穷趋区躯驱龋颧权劝却鹊让饶扰绕热韧认纫荣绒软锐闰润洒萨鳃赛伞丧骚扫涩杀纱筛晒闪陕赡缮伤赏烧绍赊摄慑设绅审婶肾渗声绳胜圣师狮湿诗尸时蚀实识驶势释饰视试寿兽枢输书赎属术树竖数帅双谁税顺说硕烁丝饲耸怂颂讼诵擞苏诉肃虽绥岁孙损笋缩琐锁獭挞抬摊贪瘫滩坛谭谈叹汤烫涛绦腾誊锑题体屉条贴铁厅听烃铜统头图涂团颓蜕脱鸵驮驼椭洼袜弯湾顽万网韦违围为潍维苇伟伪纬谓卫温闻纹稳问瓮挝蜗涡窝呜钨乌诬无芜吴坞雾务误锡牺袭习铣戏细虾辖峡侠狭厦锨鲜纤咸贤衔闲显险现献县馅羡宪线厢镶乡详响项萧销晓啸蝎协挟携胁谐写泻谢锌衅兴汹锈绣虚嘘须许绪续轩悬选癣绚学勋询寻驯训讯逊压鸦鸭哑亚讶阉烟盐严颜阎艳厌砚彦谚验鸯杨扬疡阳痒养样瑶摇尧遥窑谣药爷页业叶医铱颐遗仪彝蚁艺亿忆义诣议谊译异绎荫阴银饮樱婴鹰应缨莹萤营荧蝇颖哟拥佣痈踊咏涌优忧邮铀犹游诱舆鱼渔娱与屿语吁御狱誉预驭鸳渊辕园员圆缘远愿约跃钥岳粤悦阅云郧匀陨运蕴酝晕韵杂灾载攒暂赞赃脏凿枣灶责择则泽贼赠扎札轧铡闸诈斋债毡盏斩辗崭栈战绽张涨帐账胀赵蛰辙锗这贞针侦诊镇阵挣睁狰帧郑证织职执纸挚掷帜质钟终种肿众诌轴皱昼骤猪诸诛烛瞩嘱贮铸筑驻专砖转赚桩庄装妆壮状锥赘坠缀谆浊兹资渍踪综总纵邹诅组钻致钟么为只凶准启板里雳余链泄';
@@ -22,71 +15,62 @@ const tcMap = Object.fromEntries([...tc].map((char, index) => [char, sc[index]])
 
 // 转换函数
 const s2t = (str) => str.replace(/./g, (char) => scMap[char] || char);
-const t2s = (str) => str.replace(/./g, (char) => tcMap[char] || char);
 
-function customTransform(file, enc, done) {
-  'use strict';
-  const parser = this.parser;
-  const content = fs.readFileSync(file.path, enc);
+// 处理 JSON 文件的函数
+const processJsonFileCN = (filePath) => {
+  const content = fs.readFileSync(filePath, 'utf8');
+  const data = JSON.parse(content);
 
-  parser.parseFuncFromString(content, { list: ['t'] }, (key, options) => {
-    options.defaultValue = key;
-    let traditionalized = t2s(key); // 转换为繁体中文
-    let simplified = s2t(key); // 转换为简体中文
+  const newData = {};
+  Object.keys(data).forEach((key) => {
+    const simplifiedChinese = key;
+    newData[simplifiedChinese] = simplifiedChinese;
+  });
+  // 将处理后的数据写回文件
+  fs.writeFileSync(filePath, JSON.stringify(newData, null, 2), 'utf8');
+};
+const processJsonFileS2T = (filePath) => {
+  const content = fs.readFileSync(filePath, 'utf8');
+  const data = JSON.parse(content);
 
-    // 使用原始字符串作为 key
-    parser.set(key, options);
+  // 遍历 JSON 数据，将值从简体中文翻译为繁体中文
+  const newData = {};
+  Object.keys(data).forEach((key) => {
+    const simplifiedChinese = key;
+    const traditionalChinese = s2t(simplifiedChinese); // 根据 scMap 转换值
 
-    // 添加繁体和简体的版本
-    parser.set(traditionalized, options);
-    parser.set(simplified, options);
+    newData[simplifiedChinese] = traditionalChinese;
   });
 
-  done();
-}
-
-module.exports = {
-  input: [
-    'src/**/*.{js,jsx,tsx}',
-    // 不需要扫描的文件加!
-    '!src/i18n/**',
-    '!**/node_modules/**',
-    // 其他需要扫描的文件...
-  ],
-  output: './',
-  // 输出目录，这里使用相对路径
-  // output: 'locales',
-  // 语言配置
-
-  // 提取规则配置
-  options: {
-    // 正则表达式用于匹配待提取的文本
-    lexers: {
-      tsx: ['JsxLexer'],
-    },
-    // 使用 transform 方法将简体中文转换为繁体中文,可使用new Map缓存做性能优化。
-
-    //
-    debug: true,
-    // removeUnusedKeys: false,
-    func: {
-      list: ['t'],
-      extensions: ['.js', '.jsx', '.tsx'],
-    },
-    lngs: ['zh-CN', 'zh-TW'], // 提取中文
-    defaultLng: 'zh-CN',
-    resource: {
-      loadPath: path.resolve(__dirname, 'src/locales/{{lng}}.json'),
-      savePath: path.resolve(__dirname, 'src/locales/{{lng}}.json'),
-      jsonIndent: 2,
-      lineEnding: '\n',
-    },
-    nsSeparator: false, // 控制是否使用命名空间分隔符。当设置为 false 时，表示不使用命名空间，所有的翻译键将是扁平的，没有命名空间的概念。例如，如果有两个文件分别包含 t('hello.world') 和 t('foo.bar')，提取后的翻译键会直接是 'hello.world' 和 'foo.bar'。
-    keySeparator: false, // 控制是否使用键分隔符。当设置为 false 时，表示不使用键分隔符，提取后的翻译键将直接是包含所有层级信息的字符串。例如，对于 t('hello.world')，提取后的翻译键会是 'hello.world'。
-    interpolation: {
-      // 控制插值的前缀和后缀。例如，如果插值的前缀设置为 {{，后缀设置为 }}，那么在扫描时会认识形如 t('message', { count: {{count}} }) 的语法，并将 {{count}} 视为一个插值标记，而不是翻译键的一部分。
-      prefix: '{{',
-      suffix: '}}',
-    },
-  },
+  // 将处理后的数据写回文件
+  fs.writeFileSync(filePath, JSON.stringify(newData, null, 2), 'utf8');
 };
+
+const processJsonFile = (filePath, transformFunction) => {
+  const content = fs.readFileSync(filePath, 'utf8');
+  const data = JSON.parse(content);
+
+  // 遍历 JSON 数据，将值从简体中文翻译为繁体中文
+  const newData = {};
+  Object.keys(data).forEach((key) => {
+    const simplifiedChinese = key;
+    const transformedValue = transformFunction(simplifiedChinese);
+    if (data[key] === '') {
+      newData[simplifiedChinese] = transformedValue;
+    }
+  });
+
+  // 将处理后的数据写回文件
+  fs.writeFileSync(filePath, JSON.stringify(newData, null, 2), 'utf8');
+};
+
+// 构建文件路径
+const filePathCN = path.join(__dirname, '../src/locales/zh-CN.json');
+const filePathTW = path.join(__dirname, '../src/locales/zh-TW.json');
+
+// 使用原始值处理简体中文文件
+processJsonFile(filePathCN, (value) => value);
+// 使用 s2t 方法处理繁体中文文件
+processJsonFile(filePathTW, s2t);
+
+console.log('JSON 文件处理完成！');
