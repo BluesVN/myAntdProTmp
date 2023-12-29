@@ -1,29 +1,8 @@
-
-import { QuestionCircleOutlined } from '@ant-design/icons';
 import '@umijs/max';
 import React from 'react';
 export type SiderTheme = 'light' | 'dark';
 
-import { setLocale } from 'umi';
-
 import { useTranslation } from 'react-i18next';
-
-export const Question = () => {
-  return (
-    <div
-      style={{
-        display: 'flex',
-        height: 26,
-      }}
-      onClick={() => {
-        window.open('https://pro.ant.design/docs/getting-started');
-      }}
-    >
-      <QuestionCircleOutlined />
-    </div>
-  );
-};
-
 
 export const LanguageSwitcher = () => {
   const { t, i18n } = useTranslation();
@@ -38,9 +17,5 @@ export const LanguageSwitcher = () => {
     // setLocale(newLanguage, false)
     console.log('语言已切换为', newLanguage);
   };
-  return (
-    <button onClick={toggleLanguage}>
-      {t('切换语言')}
-    </button>
-  );
+  return <button onClick={toggleLanguage}>{t('切换语言')}</button>;
 };

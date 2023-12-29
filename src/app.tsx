@@ -1,9 +1,9 @@
-import { Footer, Question, AvatarDropdown, AvatarName, LanguageSwitcher } from '@/components';
-import { LinkOutlined } from '@ant-design/icons';
+import { Footer, AvatarDropdown, AvatarName, LanguageSwitcher } from '@/components';
+
 import type { Settings as LayoutSettings } from '@ant-design/pro-components';
-import { SettingDrawer } from '@ant-design/pro-components';
+
 import type { RunTimeLayoutConfig } from '@umijs/max';
-import { history, Link } from '@umijs/max';
+import { history } from '@umijs/max';
 import defaultSettings from '../config/defaultSettings';
 import { errorConfig } from './requestErrorConfig';
 import { currentUser as queryCurrentUser } from '@/services/ant-design-pro/api';
@@ -15,19 +15,13 @@ import i18n from './i18n'; // 导入 i18n 配置
 export const rootContainer = (container: React.ReactNode) => {
   return (
     <ConfigProvider>
-      <I18nextProvider i18n={i18n}>
-        {container}
-      </I18nextProvider>
+      <I18nextProvider i18n={i18n}>{container}</I18nextProvider>
     </ConfigProvider>
   );
 };
 
-
-
-
-const isDev = process.env.NODE_ENV === 'development';
+// const isDev = process.env.NODE_ENV === 'development';
 const loginPath = '/user/login';
-
 
 /**
  * @see  https://umijs.org/zh-CN/plugins/plugin-initial-state
@@ -62,14 +56,13 @@ export async function getInitialState(): Promise<{
   return {
     fetchUserInfo,
     settings: defaultSettings as Partial<LayoutSettings>,
-
   };
 }
 
 // ProLayout 支持的api https://procomponents.ant.design/components/layout
-export const layout: RunTimeLayoutConfig = ({ initialState, setInitialState }) => {
+export const layout: RunTimeLayoutConfig = ({ initialState }) => {
   return {
-    actionsRender: () => [<Question key="doc" />, <LanguageSwitcher />],
+    actionsRender: () => [<LanguageSwitcher key="language-switcher" />],
     avatarProps: {
       src: initialState?.currentUser?.avatar,
       title: <AvatarName />,
@@ -88,35 +81,8 @@ export const layout: RunTimeLayoutConfig = ({ initialState, setInitialState }) =
         history.push(loginPath);
       }
     },
-    bgLayoutImgList: [
-      {
-        src: 'https://mdn.alipayobjects.com/yuyan_qk0oxh/afts/img/D2LWSqNny4sAAAAAAAAAAAAAFl94AQBr',
-        left: 85,
-        bottom: 100,
-        height: '303px',
-      },
-      {
-        src: 'https://mdn.alipayobjects.com/yuyan_qk0oxh/afts/img/C2TWRpJpiC0AAAAAAAAAAAAAFl94AQBr',
-        bottom: -68,
-        right: -45,
-        height: '303px',
-      },
-      {
-        src: 'https://mdn.alipayobjects.com/yuyan_qk0oxh/afts/img/F6vSTbj8KpYAAAAAAAAAAAAAFl94AQBr',
-        bottom: 0,
-        left: 0,
-        width: '331px',
-      },
-    ],
+    // bgLayoutImgList: [],
     // route
-    links: isDev
-      ? [
-        <Link key="openapi" to="/umi/plugin/openapi" target="_blank">
-          <LinkOutlined />
-          <span>OpenAPI 文档</span>
-        </Link>,
-      ]
-      : [],
     // menu: {
     //   // 每当 initialState?.currentUser?.userid 发生修改时重新执行 request
     //   params: {
@@ -134,24 +100,7 @@ export const layout: RunTimeLayoutConfig = ({ initialState, setInitialState }) =
     // 增加一个 loading 的状态
     childrenRender: (children) => {
       // if (initialState?.loading) return <PageLoading />;
-      return (
-        <>
-          {children}
-          {isDev && (
-            <SettingDrawer
-              disableUrlParams
-              enableDarkTheme
-              settings={initialState?.settings}
-              onSettingChange={(settings) => {
-                setInitialState((preInitialState) => ({
-                  ...preInitialState,
-                  settings,
-                }));
-              }}
-            />
-          )}
-        </>
-      );
+      return <>{children}</>;
     },
     ...initialState?.settings,
   };

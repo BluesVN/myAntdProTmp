@@ -53,11 +53,16 @@ const processJsonFile = (filePath, transformFunction) => {
   // 遍历 JSON 数据，将值从简体中文翻译为繁体中文
   const newData = {};
   Object.keys(data).forEach((key) => {
-    const simplifiedChinese = key;
-    const transformedValue = transformFunction(simplifiedChinese);
     if (data[key] === '') {
+      const simplifiedChinese = key;
+      const transformedValue = transformFunction(simplifiedChinese);
+      // console.log('值1', newData[simplifiedChinese], transformedValue);
       newData[simplifiedChinese] = transformedValue;
+    } else {
+      newData[key] = data[key];
     }
+
+    // console.log('值2', newData[key], data[key]);
   });
 
   // 将处理后的数据写回文件
